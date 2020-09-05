@@ -197,6 +197,7 @@ Words are called “symbols” in the library terminology.
 ```python
 for word in ["The", "dog", "ran", "across", "the", "park", "."]:
     seq.add_symbol(word)
+
 print(seq)
 ```
 
