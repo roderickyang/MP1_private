@@ -8,8 +8,9 @@ def tokens_lowercase(doc):
     tok = metapy.analyzers.ICUTokenizer(suppress_tags=True)
     tok = metapy.analyzers.LengthFilter(tok, min=2, max=5)
     tok = metapy.analyzers.LowercaseFilter(tok)
+    tok = metapy.analyzers.CharacterTokenizer()
     ana = metapy.analyzers.NGramWordAnalyzer(3, tok)
-    trigrams = ana.analyze(tok)
+    trigrams = ana.analyze(doc)
     #just checking if the submission works
     #leave the rest of the code as is
     tok.set_content(doc.content())
