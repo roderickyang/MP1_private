@@ -9,7 +9,7 @@ def tokens_lowercase(doc):
     tok = metapy.analyzers.LengthFilter(tok, min=2, max=5)
     tok = metapy.analyzers.LowercaseFilter(tok)
     ana = metapy.analyzers.NGramWordAnalyzer(3, tok)
-    trigrams = ana.analyze(doc)
+    trigrams = ana.analyze(tok)
     #just checking if the submission works
     #leave the rest of the code as is
     tok.set_content(doc.content())
